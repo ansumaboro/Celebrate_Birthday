@@ -11,7 +11,7 @@ for (let i = 0; i <= 170; i++) {
 for (let i=0; i<=9; i++){
     let video = document.createElement("video");
     // video.src = `images/gallery/videos/vdo${i}.mp4`;
-    video.setAttribute("data-src", `images/gallery/videos/vdo${i}.mp4`)
+    video.setAttribute("data-src", `images/gallery/videos/vid${i}.mp4`)
     video.classList.add("item");
     video.controls = false;
     video.autoplay = true;
