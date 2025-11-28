@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(252, 194, 204);
+}
+
+.container {
+    height: 98vh;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+}
+
+.people {
+    position: absolute;
+    left: 50%;
+    bottom: 560px;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index: 1;
+}
+
+.people img {
+    height: 200px;
+    position: absolute;
+}
+
+#person1 {
+    left: 0%;
+}
+#person2 {
+    left: 15%;
+}
+#person3 {
+    left: 32%;
+}
+#person4 {
+    left: 45%;
+}
+#person5 {
+    left: 60%;
+}
+#person6 {
+    left: 80%;
+}
+#person7 {
+    left: 90%;
+}
+
+#cake {
+    width: 100%;
+}
+
+#knife {
+    position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left: 45%;
+    transform: translateX(-50%);
+    height: 30%;
+    display: none;
+    transform-origin: 50%;
+}
+
+@keyframes myBtn {
+    0% {scale: 1;}
+    100% {scale: 1.05;}
+}
+
+.button-container button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 6px 14px;
+    margin: 6px 10px;
+    display: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px;
+    background-color: rgb(243, 33, 243);
+    cursor: pointer;
+    opacity: 0.8;
+    animation: myBtn 0.2s linear infinite;
+}
+
+.button-container button:hover {
+    background-color: rgb(243, 9, 243);
+    scale: 1.02;
+    animation: none;
+}
+
+#hand {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    backdrop-filter: blur(0.5px);
+    display: none;
+    z-index: 10;
+}
+
+#eat-person {
+    z-index: 1;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(1px);
+    display: none;
+    scale: 0;
+}
+
+@keyframes note {
+    0% {scale: 1;}
+    100% {scale: 1.1;}
+}
+
+#note {
+    position: absolute;
+    top: 0;
+    background-color: orange;
+    animation: note 0.2s linear infinite;
+    display: none;
+}
+
+#cover {
+    position: absolute;
+    background-color: black;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
