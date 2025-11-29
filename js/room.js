@@ -6,6 +6,22 @@ const wishPerson = document.getElementById("wish-person")
 const wishPersonBg = document.getElementById("wish")
 const thankBtn = document.getElementById("thnkyou")
 
+const birthdayWishes = new Audio("voices/happy-birthday-wishes.mp3")
+
+async function unmute(){
+    document.getElementById("muteLbl").style.display = "none"
+    birthdayWishes.play()
+    setTimeout(() => {
+        wishPersonBg.style.display = "block";
+        wishPerson.style.display = "block";
+        animateWishIn();
+
+        setTimeout(() => {
+            thankBtn.style.display = "block"
+        }, 1000);
+    }, 5000);
+}
+
 persons = ["bishakha", "mainu", "talukdar", "sogun", "sneha", "ansuma"]
 count = 0;
 
@@ -51,15 +67,6 @@ async function animateWishOut(){
     }
 }
 
-setTimeout(() => {
-    wishPersonBg.style.display = "block";
-    wishPerson.style.display = "block";
-    animateWishIn();
-
-    setTimeout(() => {
-        thankBtn.style.display = "block"
-    }, 1000);
-}, 5000);
 
 async function animateCake(){
     cakeTable.style.display = "block";

@@ -22,17 +22,26 @@ body {
     bottom: 0;
 }
 
-@keyframes wishes {
+/* @keyframes wishes {
     0% {bottom: -500px;}
     100% {bottom: 0;}
-}
+} */
 
 #people img {
     position: absolute;
-    bottom: 0;
+    bottom: -500px;
     width: 250px;
-    animation: wishes 0.5s linear;
+    transition: bottom 0.5s linear;
 }
+
+#muteBtn {
+    display: none;
+}
+
+#muteBtn:checked ~ img {
+    bottom: 0;
+}
+
 
 #person1 {
     left: 10%;
@@ -128,4 +137,25 @@ body {
     width: 100vw;
     height: 100vh;
     display: none;
+}
+
+#muteLbl {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 3px;
+    margin: 20px;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    z-index: 10;
+}
+
+#muteLbl img {
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    aspect-ratio: 1;
 }

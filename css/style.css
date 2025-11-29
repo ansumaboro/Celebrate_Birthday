@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 98vh;
     overflow: hidden;
-    /* position: relative; */
+    position: relative;
 }
 
 .image-container {
@@ -34,10 +34,37 @@ body {
 
 .container .host {
     position: absolute;
-    bottom: 0;
+    bottom: -500px;
     left: 0;
-    animation-name: hostUp;
-    animation-duration: 2s;
+    transition: bottom 2s linear;
+}
+
+#muteBtn {
+    display: none;
+}
+
+#muteBtn:checked ~ .host {
+    bottom: 0;
+}
+
+#muteLbl {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 3px;
+    margin: 20px;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+}
+
+#muteLbl img {
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    aspect-ratio: 1;
 }
 
 .host img, #host-person2 {

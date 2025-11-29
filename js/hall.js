@@ -6,7 +6,20 @@ const enterBtn = document.getElementById("enter")
 const hand = document.getElementById("hand-wave")
 const girl = document.getElementById("bd-girl")
 
+// voices
+const helloVoice = new Audio("voices/hello.mp3")
+const welcomeVoice = new Audio("voices/welcome.mp3")
+const walkingSound = new Audio("voices/walking.mp3")
+
+function unmute() {
+    document.getElementById("muteLbl").style.display = "none"
+    setTimeout(()=>{
+        animateHost();
+    }, 2000)
+}
+
 function animateHost() {
+    helloVoice.play()
     for(i = 0; i<14; i++){
         setTimeout(()=>{
             if(host_person.src.includes("images/host1.webp")){
@@ -20,9 +33,6 @@ function animateHost() {
         wave.style.display = "block"
     }, i*100)
 }
-setTimeout(()=>{
-    animateHost()
-}, 2000)
 
 waveBtn.onclick = ()=>{
     waveBtn.style.display = "none";
@@ -37,6 +47,7 @@ waveBtn.onclick = ()=>{
             host_person.style.marginLeft = "30px"
             host_person.src = "images/welcome.webp"
             host_person2.style.display = "block"
+            welcomeVoice.play()
 
             setTimeout(() => {
                 enterBtn.style.display = "block";
@@ -68,10 +79,10 @@ function animateWalking() {
     enterBtn.style.display = "none";
     let bottom = parseInt(getComputedStyle(girl).bottom)
     let scale = 1
+    walkingSound.play()
 
     for(i=0; i<10; i++){
         setTimeout(()=>{
-            // console.log("walking")
             bottom += 10
             girl.style.bottom = bottom + "px" 
     
